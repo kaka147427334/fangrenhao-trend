@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>方任昊 · 区域经营趋势述职看板（2026年3-9月）</title>
+<title>方任昊 · 区域经营趋势述职看板（2026年2-9月）</title>
 <style>
   :root{
     --bg:#f4f6f9; --card:#ffffff; --line:#e3e8ef;
@@ -19,27 +19,31 @@
   }
   .wrap{max-width:1180px;margin:0 auto}
 
-  header{margin-bottom:22px}
+  header{margin-bottom:20px}
   .eyebrow{font-size:13px;letter-spacing:2px;color:var(--blue);font-weight:600}
   h1{font-size:27px;font-weight:700;letter-spacing:-.3px;margin:6px 0 8px}
   .sub{font-size:14px;color:var(--ink2);line-height:1.7}
   .sub b{color:var(--ink)}
+  .baseline{margin-top:10px;display:inline-flex;align-items:center;gap:8px;background:#fff5ec;border:1px solid #f3d3b4;border-radius:9px;padding:8px 14px;font-size:13px;color:#8a4b12}
+  .baseline b{color:#7a3f0a}
 
-  .kpis{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin:20px 0 22px}
-  .kpi{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
-  .kpi .k{font-size:12px;color:var(--ink3);margin-bottom:7px}
-  .kpi .v{font-size:23px;font-weight:700;letter-spacing:-.5px;line-height:1.1}
-  .kpi .n{font-size:11.5px;color:var(--ink3);margin-top:5px}
+  .kpis{display:grid;grid-template-columns:repeat(6,1fr);gap:11px;margin:18px 0 20px}
+  .kpi{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:13px 15px}
+  .kpi .k{font-size:11.5px;color:var(--ink3);margin-bottom:6px;line-height:1.4}
+  .kpi .v{font-size:21px;font-weight:700;letter-spacing:-.5px;line-height:1.15}
+  .kpi .n{font-size:11px;color:var(--ink3);margin-top:5px;line-height:1.5}
   .kpi.acc{background:linear-gradient(160deg,#1f5fa9,#2f76c4);border-color:#1f5fa9}
-  .kpi.acc .k,.kpi.acc .n{color:rgba(255,255,255,.78)}
+  .kpi.acc .k,.kpi.acc .n{color:rgba(255,255,255,.8)}
   .kpi.acc .v{color:#fff}
+  .kpi.warn{background:#fff5ec;border-color:#f3d3b4}
+  .kpi.warn .k,.kpi.warn .n{color:#8a4b12}
 
   .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
   .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px 14px}
   .card h2{font-size:16px;font-weight:700;display:flex;align-items:center;gap:8px;margin-bottom:3px}
   .card h2 .no{display:inline-flex;width:21px;height:21px;border-radius:6px;background:var(--blue);color:#fff;font-size:12px;align-items:center;justify-content:center;font-weight:700}
   .card .desc{font-size:12.5px;color:var(--ink3);margin-bottom:8px;line-height:1.6}
-  .legend{display:flex;gap:16px;font-size:12px;color:var(--ink2);margin-bottom:6px;flex-wrap:wrap}
+  .legend{display:flex;gap:15px;font-size:12px;color:var(--ink2);margin-bottom:6px;flex-wrap:wrap}
   .legend i{display:inline-block;width:16px;height:3px;border-radius:2px;margin-right:5px;vertical-align:middle}
   .chart{width:100%}
   .chart svg{width:100%;height:auto;display:block;overflow:visible}
@@ -52,21 +56,30 @@
   th:first-child,td:first-child{text-align:left}
   tbody tr:hover{background:#f7f9fc}
   tr.total td{font-weight:700;background:#f2f6fb;border-top:2px solid var(--blue)}
+  tr.base td{background:#fff9f3}
   .pos{color:var(--up);font-weight:600}
   .neg{color:var(--down);font-weight:600}
   .rk{display:inline-flex;min-width:22px;height:22px;padding:0 5px;border-radius:6px;align-items:center;justify-content:center;font-weight:700;font-size:12px}
   .rk.top{background:#d1362c;color:#fff}
   .rk.mid{background:#eef1f6;color:var(--ink2)}
   .rk.low{background:#fbeae8;color:#b03028}
+  .tag{display:inline-block;font-size:10.5px;font-weight:600;color:#8a4b12;background:#fbe3cb;border-radius:5px;padding:1px 6px;margin-left:6px;vertical-align:middle}
 
-  .notes{margin-top:18px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 22px}
+  .notes{margin-top:16px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 22px}
   .notes h2{font-size:16px;margin-bottom:12px}
   .notes ol{list-style:none;counter-reset:n}
   .notes li{counter-increment:n;position:relative;padding-left:30px;margin-bottom:11px;font-size:13.5px;line-height:1.85;color:var(--ink2)}
   .notes li::before{content:counter(n);position:absolute;left:0;top:2px;width:20px;height:20px;border-radius:50%;background:var(--blue);color:#fff;font-size:11.5px;font-weight:700;display:flex;align-items:center;justify-content:center}
   .notes li b{color:var(--ink)}
+  .cmp{display:grid;grid-template-columns:repeat(4,1fr);gap:11px;margin:4px 0 16px}
+  .cmp div{background:#f7f9fc;border:1px solid var(--line);border-radius:10px;padding:11px 13px;text-align:center}
+  .cmp .t{font-size:11.5px;color:var(--ink3);margin-bottom:6px}
+  .cmp .m{font-size:13px;color:var(--ink2);font-weight:600}
+  .cmp .m s{color:var(--ink3);text-decoration:none;font-weight:500}
+  .cmp .m em{font-style:normal;color:var(--up);font-weight:700;margin-left:6px}
   footer{margin-top:22px;font-size:11.5px;color:var(--ink3);text-align:center;line-height:1.8}
-  @media(max-width:900px){.grid{grid-template-columns:1fr}.kpis{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:1000px){.grid{grid-template-columns:1fr}.kpis{grid-template-columns:repeat(3,1fr)}.cmp{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:640px){.kpis{grid-template-columns:repeat(2,1fr)}}
 </style>
 </head>
 <body>
@@ -75,15 +88,17 @@
 <header>
   <div class="eyebrow">华南大区 · 零售经理述职</div>
   <h1>方任昊 区域经营趋势看板</h1>
-  <div class="sub">统计区间：<b>2026年3月 – 9月</b>（共 7 个完整月份）　|　对比基准：华南大区 <b>12 位零售经理</b> 同期表现　|　数据来源：销售日报—城市经理各月全量数据（经理月累计口径）</div>
+  <div class="sub">统计区间：<b>2026年2月 – 9月</b>　|　对比基准：华南大区 <b>12 位零售经理</b> 同期表现　|　数据来源：销售日报—城市经理各月全量数据（经理月累计口径）</div>
+  <div class="baseline">◀ <b>2月为接手前基准月</b>（图中橙色虚线左侧），用于呈现接手起点；<b>3月起为接手后</b>，累计口径均按 3–9 月计算</div>
 </header>
 
 <div class="kpis">
-  <div class="kpi"><div class="k">7个月累计锁单</div><div class="v">5,510</div><div class="n">目标 7,632 → 累计达成 72.19%</div></div>
-  <div class="kpi"><div class="k">7个月累计交付</div><div class="v">5,363</div><div class="n">占华南累计交付 10.35%</div></div>
+  <div class="kpi warn"><div class="k">2月接手前基线</div><div class="v">第 9 名</div><div class="n">锁单占比 9.00%<br>低于大区平均 5.38pp</div></div>
+  <div class="kpi"><div class="k">接手后累计锁单</div><div class="v">5,510</div><div class="n">目标 7,632 → 72.19%</div></div>
+  <div class="kpi"><div class="k">接手后累计交付</div><div class="v">5,363</div><div class="n">占华南累计交付 10.35%</div></div>
   <div class="kpi"><div class="k">累计达成 vs 华南</div><div class="v" style="color:var(--up)">+1.43pp</div><div class="n">个人 72.19% / 华南 70.76%</div></div>
-  <div class="kpi"><div class="k">9月锁单完成率排名</div><div class="v">第 2 名</div><div class="n">12人中，区间内最好名次</div></div>
-  <div class="kpi acc"><div class="k">9月锁单占比</div><div class="v">11.25%</div><div class="n">区间最高，首破 11%</div></div>
+  <div class="kpi"><div class="k">9月锁单完成率排名</div><div class="v">第 2 名</div><div class="n">区间内最好名次</div></div>
+  <div class="kpi acc"><div class="k">9月锁单占比</div><div class="v">11.25%</div><div class="n">较接手前 +2.26pp</div></div>
 </div>
 
 <div class="grid">
@@ -91,9 +106,9 @@
   <div class="card">
     <h2><span class="no">1</span>月度锁单完成率排名变化</h2>
     <div class="desc">按当月「净增锁单达成率」在华南 12 位零售经理中降序排名，1 名为最优</div>
-    <div class="legend"><span><i style="background:var(--blue)"></i>方任昊排名</span><span><i style="background:var(--gray)"></i>排名中位线（第6.5名）</span></div>
+    <div class="legend"><span><i style="background:var(--blue)"></i>方任昊排名</span><span><i style="background:var(--gray)"></i>排名中位线（第6.5名）</span><span><i style="background:var(--orange)"></i>接手节点</span></div>
     <div class="chart" id="c1"></div>
-    <div class="takeaway">排名轨迹 <b>5 → 7 → 4 → 6 → 9 → 8 → 2</b>。年中 7–8 月为低谷（第9、第8名），<b>9月强势回升至第2名</b>，为七个月区间内最好名次，呈「V型反转」。</div>
+    <div class="takeaway">接手前 2月位列第 9，接手后排名轨迹 <b>5 → 7 → 4 → 6 → 9 → 8 → 2</b>。年中 7–8 月为低谷（第9、第8名），<b>9月强势回升至第2名</b>，为八个月区间内最好名次，呈「V型反转」。</div>
   </div>
 
   <div class="card">
@@ -101,29 +116,39 @@
     <div class="desc">个人达成率与 12 位零售经理算术平均达成率对比，柱形为差值（红＝高于平均，绿＝低于平均）</div>
     <div class="legend"><span><i style="background:var(--blue)"></i>方任昊</span><span><i style="background:var(--gray)"></i>大区平均</span><span><i style="background:var(--up)"></i>高于平均</span><span><i style="background:var(--down)"></i>低于平均</span></div>
     <div class="chart" id="c2"></div>
-    <div class="takeaway">7个月中 <b>5 个月跑赢大区平均</b>；7、8 月连续两月低于平均（-1.57pp / -2.16pp），<b>9月以 +6.57pp 创区间最大领先幅度</b>。</div>
+    <div class="takeaway">接手前 2月低于平均 <b>5.38pp</b>；接手后 7 个月中 <b>5 个月跑赢大区平均</b>，7、8 月连续两月落后（-1.57pp / -2.16pp），<b>9月以 +6.57pp 创区间最大领先幅度</b>，相对大区平均累计反转 11.95pp。</div>
   </div>
 
   <div class="card">
     <h2><span class="no">3</span>月度锁单占华南锁单量比例</h2>
     <div class="desc">个人月累计净增锁单 ÷ 华南大区月累计净增锁单，衡量区域内份额贡献</div>
-    <div class="legend"><span><i style="background:var(--blue)"></i>锁单份额</span><span><i style="background:var(--gray)"></i>7个月均值 10.31%</span></div>
+    <div class="legend"><span><i style="background:var(--blue)"></i>锁单份额</span><span><i style="background:var(--gray)"></i>接手后7个月均值 10.31%</span></div>
     <div class="chart" id="c3"></div>
-    <div class="takeaway">3–8月稳定在 <b>9.95%–10.63%</b> 窄幅区间，<b>9月跃升至 11.25%</b>，首次突破 11%，份额贡献创区间新高。</div>
+    <div class="takeaway">接手前 2月仅 <b>9.00%</b>；接手后 3–8月稳定在 <b>9.95%–10.63%</b> 窄幅区间（波动 0.68pp），<b>9月跃升至 11.25%</b>，首次突破 11%，较接手前提升 2.26pp。</div>
   </div>
 
   <div class="card">
     <h2><span class="no">4</span>月度交付占华南交付量比例</h2>
     <div class="desc">个人月累计交付 ÷ 华南大区月累计交付，衡量交付端实际产出份额</div>
-    <div class="legend"><span><i style="background:var(--orange)"></i>交付份额</span><span><i style="background:var(--gray)"></i>7个月均值 10.29%</span></div>
+    <div class="legend"><span><i style="background:var(--orange)"></i>交付份额</span><span><i style="background:var(--gray)"></i>接手后7个月均值 10.29%</span></div>
     <div class="chart" id="c4"></div>
-    <div class="takeaway">自4月低点 9.45% 起 <b>连续5个月单边上行</b>至 11.10%，累计提升 <b>+1.65pp</b>，交付转化能力持续改善，趋势稳定性优于锁单端。</div>
+    <div class="takeaway">接手前 2月为 <b>9.18%</b>；接手后自 4月低点 9.45% 起 <b>连续5个月单边上行</b>至 11.10%，累计提升 <b>+1.65pp</b>，交付转化能力持续改善，趋势稳定性优于锁单端。</div>
   </div>
 
 </div>
 
-<div class="notes" style="margin-top:16px">
-  <h2>明细数据表（2026年3–9月）</h2>
+<div class="notes">
+  <h2>接手前后对比（2月 → 9月）</h2>
+  <div class="cmp">
+    <div><div class="t">锁单占华南比例</div><div class="m"><s>9.00%</s> → 11.25%<em>+2.26pp</em></div></div>
+    <div><div class="t">交付占华南比例</div><div class="m"><s>9.18%</s> → 11.10%<em>+1.91pp</em></div></div>
+    <div><div class="t">达成率 vs 大区平均</div><div class="m"><s>−5.38pp</s> → +6.57pp<em>+11.95pp</em></div></div>
+    <div><div class="t">锁单完成率排名</div><div class="m"><s>第 9 名</s> → 第 2 名<em>↑7位</em></div></div>
+  </div>
+</div>
+
+<div class="notes">
+  <h2>明细数据表（2026年2–9月）</h2>
   <table>
     <thead>
       <tr>
@@ -138,131 +163,104 @@
 <div class="notes">
   <h2>述职结论要点</h2>
   <ol>
-    <li><b>整体跑赢大区。</b>7个月累计净增锁单 5,510 台、累计交付 5,363 台，累计锁单达成率 72.19%，高于华南大区 70.76%，领先 <b>1.43 个百分点</b>，在 12 位零售经理中处于中上水平。</li>
-    <li><b>9月为区间最佳单月，四项指标同步创高。</b>锁单达成率 82.53%（区间最高）、排名第 2（区间最好）、锁单占比 11.25%（区间最高）、交付占比 11.10%（区间最高），且交付达成率 91.34% 亦为七个月最高，形成「锁单 + 交付」双端共振。</li>
-    <li><b>锁单份额：长期稳态、末期突破。</b>3–8月锁单份额锁定在 9.95%–10.63% 的窄幅通道内，波动仅 0.68pp，说明区域盘面经营稳定；9月一举提升至 11.25%，实现份额台阶式跃迁。</li>
-    <li><b>交付份额：持续爬坡，趋势质量最优。</b>交付占比自 4月 9.45% 起连续 5 个月上升至 11.10%，累计 +1.65pp。值得注意：8月锁单份额回落至 9.95% 的区间最低点，交付份额却仍升至 10.46%，反映前期锁单存量在交付端持续释放，交付管理节奏稳健。</li>
-    <li><b>需正视的短板：7–8月连续两月低于大区平均。</b>7月 -1.57pp（第9名）、8月 -2.16pp（第8名），为区间内唯一连续跑输的两个月，主因是当月锁单达成率（64.42% / 69.44%）未能跟上目标节奏。该阶段是全年走势的低谷，也是9月反弹前的调整期。</li>
-    <li><b>6月为全区间绝对低点，但相对表现仍达标。</b>6月锁单达成率 56.52% 为七个月最低，但高于大区平均 55.11%（+1.41pp）、排名第 6，说明该月是全行业性回落而非个体问题，抗跌性得到验证。</li>
+    <li><b>接手起点位于中下游（2月基线）。</b>接手前一个月锁单占比仅 9.00%，低于接手后中枢 1.31pp；达成率低于大区平均 <b>5.38pp</b>，在 12 位经理中排第 9 —— 这是本次述职的起跑线，也是后续所有增幅的对照基准。</li>
+    <li><b>接手后整体跑赢大区。</b>3–9月累计净增锁单 5,510 台、累计交付 5,363 台，累计锁单达成率 72.19%，高于华南大区 70.76%，领先 <b>1.43 个百分点</b>。</li>
+    <li><b>四项核心指标全面反转。</b>锁单份额 9.00% → 11.25%（+2.26pp）、交付份额 9.18% → 11.10%（+1.91pp）、达成率相对平均 −5.38pp → +6.57pp（反转 11.95pp）、排名 第9 → 第2（上升 7 位）。四项同向改善，构成完整的业绩叙事。</li>
+    <li><b>9月为区间最佳单月，四项指标同步创高。</b>锁单达成率 82.53%（区间最高）、排名第 2（区间最好）、锁单占比 11.25%（区间最高）、交付占比 11.10%（区间最高），交付达成率 91.34% 亦为八个月最高，形成「锁单 + 交付」双端共振。</li>
+    <li><b>锁单份额：接手后长期稳态、末期突破。</b>3–8月锁定在 9.95%–10.63% 窄幅通道内，波动仅 0.68pp，说明区域盘面经营稳定；9月一举提升至 11.25%，实现份额台阶式跃迁。</li>
+    <li><b>交付份额：持续爬坡，趋势质量最优。</b>自 4月 9.45% 起连续 5 个月上升至 11.10%，累计 +1.65pp。值得注意：8月锁单份额回落至接手后最低点 9.95%，交付份额却仍升至 10.46%，反映前期锁单存量在交付端持续释放，交付管理节奏稳健。</li>
+    <li><b>需正视的短板与抗跌验证。</b>7–8月连续两月低于大区平均（-1.57pp / -2.16pp，第9、第8名），是区间内唯一连续跑输的阶段，主因锁单节奏未跟上目标。而 6月锁单达成率 56.52% 虽为区间绝对低点，却仍高于大区平均 55.11%（+1.41pp）、排名第 6，说明该月属全行业性回落，抗跌性得到验证。</li>
   </ol>
 </div>
 
 <footer>
-  数据来源：销售日报—城市经理（3月/4月/5月/6月/7月/8月/9月 全量数据）<br>
-  口径说明：达成率＝月累计净增锁单 ÷ 净增锁单目标；占比＝个人月累计 ÷ 华南大区月累计（12 位零售经理之和，已核对与「小计」行一致）<br>
-  华南大区零售经理：余子恩&容方立、余子恩&赵全建、方任昊&赵全建、李传华&陈焕友、李博恩&陈焕友、熊俊晖&张帅、秦启超&容方立、罗捷&张帅、胡浩&赵全建、贾迪赫&张帅、陈恒惕&赵全建、黄伟峰&容方立
+  数据来源：销售日报—城市经理（2月/3月/4月/5月/6月/7月/8月/9月 全量数据）<br>
+  口径说明：达成率＝月累计净增锁单 ÷ 净增锁单目标；占比＝个人月累计 ÷ 华南大区月累计（12 位零售经理之和，已核对与「小计」行完全一致）；「大区平均」＝12 位经理达成率算术平均；累计口径均为接手后 3–9 月<br>
+  提示：2月为春节月，华南大盘锁单量仅为常态月份的 1/3，且有小体量经理达成率极值（142%）推高当月算术平均值，故 2月「低于平均 5.38pp」宜与「排名第 9」结合解读
 </footer>
 
 </div>
 
 <script>
-const M = [3,4,5,6,7,8,9];
+const M = [2,3,4,5,6,7,8,9];
 const L = M.map(m=>m+'月');
-const lockRate   = [78.88,74.54,81.38,56.52,64.42,69.44,82.53];
-const avgRate    = [75.23,75.56,75.53,55.11,65.99,71.60,75.97];
-const rank       = [5,7,4,6,9,8,2];
-const lockShare  = [10.05,10.08,10.63,10.07,10.15,9.95,11.25];
-const delivShare = [10.06,9.45,10.24,10.34,10.37,10.46,11.10];
-const lock       = [638,849,909,669,699,802,944];
-const deliv      = [477,558,836,845,838,828,981];
-const hnLock     = [6351,8420,8548,6641,6885,8059,8388];
-const hnDeliv    = [4741,5906,8161,8173,8080,7918,8839];
-const lockTgt    = [808.9,1139,1117,1183.6,1085,1155,1143.8];
-const delivRate  = [85.79,80.99,90.18,86.31,79.98,76.88,91.34];
+const BASE_END = 1;               // 索引 <1 为接手前（即 2月）
+const lockRate   = [83.7852,78.8766,74.5391,81.3787,56.5203,64.424,69.4372,82.5319];
+const avgRate    = [89.1637,75.2287,75.562,75.5301,55.1084,65.9907,71.6009,75.9659];
+const rank       = [9,5,7,4,6,9,8,2];
+const lockShare  = [8.9954,10.0457,10.0831,10.6341,10.0738,10.1525,9.9516,11.2542];
+const delivShare = [9.1837,10.0612,9.448,10.2438,10.3389,10.3713,10.4572,11.0985];
+const lock       = [197,638,849,909,669,699,802,944];
+const deliv      = [207,477,558,836,845,838,828,981];
+const hnLock     = [2190,6351,8420,8548,6641,6885,8059,8388];
+const hnDeliv    = [2254,4741,5906,8161,8173,8080,7918,8839];
+const lockTgt    = [235.1,808.9,1139,1117,1183.6,1085,1155,1143.8];
+const delivRate  = [94.9541,85.7914,80.9869,90.1834,86.3126,79.9834,76.8802,91.3408];
 
 const C = {blue:'#1f5fa9', orange:'#e07b2c', gray:'#aab4c0', grid:'#eef1f6',
            axis:'#9aa5b1', ink:'#16202e', ink2:'#4a5768', up:'#d1362c', down:'#149a5c'};
-const W=640, H=290, PL=46, PR=18, PT=28, PB=34;
+const W=640, H=290, PL=46, PR=18, PT=30, PB=34;
 const iw = W-PL-PR, ih = H-PT-PB;
+const N = 8;
+const X = i => PL + (iw*i/(N-1));
+const SPLIT = 0.5;               // 接手分界线：2月与3月之间
 
-function esc(s){return String(s);}
 function el(id,html){document.getElementById(id).innerHTML = html;}
 
-// 通用折线图
+function splitLine(){
+  const x = X(SPLIT);
+  return `<line x1="${x}" y1="${PT-4}" x2="${x}" y2="${PT+ih}" stroke="${C.orange}" stroke-width="1.6" stroke-dasharray="6 4" opacity="0.85"/>`
+       + `<text x="${x+5}" y="${PT+11}" font-size="10.5" font-weight="700" fill="${C.orange}">接手 ▶</text>`;
+}
+
 function chart(opt){
-  const {data, yMin, yMax, fmt, color, invert, avgLine, labels, bars, barBase, dotLabels, bandHi, bandLo, medianLine} = opt;
-  const n = data.length;
-  const x = i => PL + (n===1?iw/2:(iw*i/(n-1)));
-  // Y 轴刻度
-  let ticks = opt.ticks;
-  const y = v => {
-    if(invert){ return PT + (v-yMin)/(yMax-yMin)*ih; }
-    return PT + ih - (v-yMin)/(yMax-yMin)*ih;
-  };
+  const {data, yMin, yMax, fmt, color, invert, avgLine, labels, dotLabels, bandHi, bandLo, medianLine} = opt;
+  const y = v => invert ? PT + (v-yMin)/(yMax-yMin)*ih
+                        : PT + ih - (v-yMin)/(yMax-yMin)*ih;
   let s = `<svg viewBox="0 0 ${W} ${H}" role="img">`;
 
-  // 高亮带（最优区间）
   if(bandHi!==undefined){
     s += `<rect x="${PL}" y="${y(bandHi)}" width="${iw}" height="${Math.abs(y(bandLo)-y(bandHi))}" fill="#f0f5fb"/>`;
   }
-
-  // 网格 + Y 轴标签
-  ticks.forEach(t=>{
-    const yy = y(t);
+  opt.ticks.forEach(t=>{
+    const yy=y(t);
     s += `<line x1="${PL}" y1="${yy}" x2="${W-PR}" y2="${yy}" stroke="${C.grid}" stroke-width="1"/>`;
     s += `<text x="${PL-9}" y="${yy+4}" text-anchor="end" font-size="11" fill="${C.axis}">${fmt(t)}</text>`;
   });
-
-  // 中位参考线
   if(medianLine!==undefined){
     const yy=y(medianLine);
     s += `<line x1="${PL}" y1="${yy}" x2="${W-PR}" y2="${yy}" stroke="${C.gray}" stroke-width="1.5" stroke-dasharray="5 4"/>`;
   }
-
-  // 平均参考线
   if(avgLine!==undefined){
     const yy=y(avgLine);
     s += `<line x1="${PL}" y1="${yy}" x2="${W-PR}" y2="${yy}" stroke="${C.gray}" stroke-width="1.5" stroke-dasharray="5 4"/>`;
   }
-
-  // 差值柱
-  if(bars){
-    const zy = y(barBase);
-    bars.forEach((b,i)=>{
-      const yy = y(bars[i]);
-      const h = Math.abs(yy-zy);
-      const c = b>=barBase ? C.up : C.down;
-      s += `<rect x="${x(i)-11}" y="${Math.min(yy,zy)}" width="22" height="${Math.max(h,0.7)}" fill="${c}" opacity="0.13" rx="2"/>`;
-    });
-  }
-
-  // 面积
   if(opt.area){
-    const pts = data.map((v,i)=>`${x(i)},${y(v)}`).join(' ');
+    const pts = data.map((v,i)=>`${X(i)},${y(v)}`).join(' ');
     const base = y(invert?yMax:yMin);
-    s += `<polygon points="${x(0)},${base} ${pts} ${x(n-1)},${base}" fill="${color}" opacity="0.07"/>`;
+    s += `<polygon points="${X(0)},${base} ${pts} ${X(N-1)},${base}" fill="${color}" opacity="0.07"/>`;
   }
-
-  // 折线
-  const pts = data.map((v,i)=>`${x(i)},${y(v)}`).join(' ');
-  s += `<polyline points="${pts}" fill="none" stroke="${color}" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>`;
-
-  // 点 + 数值标签
+  s += splitLine();
+  s += `<polyline points="${data.map((v,i)=>X(i)+','+y(v)).join(' ')}" fill="none" stroke="${color}" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>`;
   data.forEach((v,i)=>{
-    const cx=x(i), cy=y(v);
-    s += `<circle cx="${cx}" cy="${cy}" r="5" fill="#fff" stroke="${color}" stroke-width="2.6"/>`;
+    const cx=X(i), cy=y(v);
+    s += `<circle cx="${cx}" cy="${cy}" r="${i<BASE_END?4:5}" fill="#fff" stroke="${color}" stroke-width="2.6" ${i<BASE_END?'opacity="0.75"':''}/>`;
     if(dotLabels){
-      const lb = dotLabels[i];
       const dy = invert ? 18 : -11;
-      s += `<text x="${cx}" y="${cy+dy}" text-anchor="middle" font-size="11.5" font-weight="700" fill="${C.ink}">${lb}</text>`;
+      s += `<text x="${cx}" y="${cy+dy}" text-anchor="middle" font-size="11.5" font-weight="700" fill="${i<BASE_END?C.ink2:C.ink}">${dotLabels[i]}</text>`;
     }
   });
-
-  // X 轴标签
   labels.forEach((lb,i)=>{
-    s += `<text x="${x(i)}" y="${H-PB+18}" text-anchor="middle" font-size="12" fill="${C.ink2}">${lb}</text>`;
+    s += `<text x="${X(i)}" y="${H-PB+18}" text-anchor="middle" font-size="12" fill="${C.ink2}">${lb}</text>`;
   });
-  // 反向轴（排名）方向提示
   if(invert){
-    s += `<text x="${PL-9}" y="${PT-9}" text-anchor="end" font-size="10.5" fill="#b03028">↑ 优</text>`;
+    s += `<text x="${PL-9}" y="${PT-10}" text-anchor="end" font-size="10.5" fill="#b03028">↑ 优</text>`;
     s += `<text x="${PL-9}" y="${PT+ih+16}" text-anchor="end" font-size="10.5" fill="${C.axis}">↓ 弱</text>`;
   }
-  s += `<line x1="${PL}" y1="${PT+ih}" x2="${W-PR}" y2="${PT+ih}" stroke="#dde3ec" stroke-width="1"/>`;
-  s += `</svg>`;
+  s += `<line x1="${PL}" y1="${PT+ih}" x2="${W-PR}" y2="${PT+ih}" stroke="#dde3ec" stroke-width="1"/></svg>`;
   return s;
 }
-
-function mean(a){return a.reduce((p,c)=>p+c,0)/a.length;}
+const mean = a => a.reduce((p,c)=>p+c,0)/a.length;
 
 // 图1 排名（反向 Y：第1名在最上方）
 el('c1', chart({
@@ -271,65 +269,60 @@ el('c1', chart({
   bandHi:1, bandLo:3.5, medianLine:6.5
 }));
 
-// 图2 达成率 vs 平均（双线 + 差值柱 + 差值标注，单独绘制）
+// 图2 达成率 vs 平均（双线 + 差值柱 + 差值标注）
 (function(){
-  const n=7, x=i=>46+(iw*i/(n-1));
-  const y=v=>28+ih-(v-50)/(90-50)*ih;
-  let s=`<svg viewBox="0 0 ${W} ${H}" role="img">`;
+  const y = v => PT + ih - (v-50)/(92-50)*ih;
+  let s = `<svg viewBox="0 0 ${W} ${H}" role="img">`;
   [50,60,70,80,90].forEach(t=>{
-    s+=`<line x1="46" y1="${y(t)}" x2="${W-18}" y2="${y(t)}" stroke="${C.grid}" stroke-width="1"/>`;
-    s+=`<text x="37" y="${y(t)+4}" text-anchor="end" font-size="11" fill="${C.axis}">${t}%</text>`;
+    s += `<line x1="${PL}" y1="${y(t)}" x2="${W-PR}" y2="${y(t)}" stroke="${C.grid}" stroke-width="1"/>`;
+    s += `<text x="${PL-9}" y="${y(t)+4}" text-anchor="end" font-size="11" fill="${C.axis}">${t}%</text>`;
   });
-  // 差值柱
   lockRate.forEach((v,i)=>{
-    const zy=y(avgRate[i]);
-    const yy=y(v);
-    const h=Math.abs(yy-zy);
-    const c=v>=avgRate[i]?C.up:C.down;
-    s+=`<rect x="${x(i)-13}" y="${Math.min(yy,zy)}" width="26" height="${Math.max(h,0.8)}" fill="${c}" opacity="0.14" rx="2"/>`;
+    const zy=y(avgRate[i]), yy=y(v);
+    const c = v>=avgRate[i] ? C.up : C.down;
+    s += `<rect x="${X(i)-12}" y="${Math.min(yy,zy)}" width="24" height="${Math.max(Math.abs(yy-zy),0.8)}" fill="${c}" opacity="0.14" rx="2"/>`;
   });
-  // 平均线
-  s+=`<polyline points="${avgRate.map((v,i)=>x(i)+','+y(v)).join(' ')}" fill="none" stroke="${C.gray}" stroke-width="2" stroke-dasharray="6 4"/>`;
-  avgRate.forEach((v,i)=>{s+=`<circle cx="${x(i)}" cy="${y(v)}" r="3.2" fill="${C.gray}"/>`;});
-  // 主线
-  s+=`<polyline points="${lockRate.map((v,i)=>x(i)+','+y(v)).join(' ')}" fill="none" stroke="${C.blue}" stroke-width="2.8" stroke-linejoin="round"/>`;
+  s += splitLine();
+  s += `<polyline points="${avgRate.map((v,i)=>X(i)+','+y(v)).join(' ')}" fill="none" stroke="${C.gray}" stroke-width="2" stroke-dasharray="6 4"/>`;
+  avgRate.forEach((v,i)=>{ s += `<circle cx="${X(i)}" cy="${y(v)}" r="3.2" fill="${C.gray}"/>`; });
+  s += `<polyline points="${lockRate.map((v,i)=>X(i)+','+y(v)).join(' ')}" fill="none" stroke="${C.blue}" stroke-width="2.8" stroke-linejoin="round"/>`;
   lockRate.forEach((v,i)=>{
-    s+=`<circle cx="${x(i)}" cy="${y(v)}" r="5" fill="#fff" stroke="${C.blue}" stroke-width="2.6"/>`;
-    const d=v-avgRate[i];
-    const c=d>=0?C.up:C.down;
-    s+=`<text x="${x(i)}" y="${y(v)-12}" text-anchor="middle" font-size="11.5" font-weight="700" fill="${C.ink}">${v.toFixed(1)}</text>`;
-    s+=`<text x="${x(i)}" y="${y(v)+21}" text-anchor="middle" font-size="10.5" font-weight="600" fill="${c}">${d>=0?'+':''}${d.toFixed(2)}</text>`;
+    const d = v-avgRate[i], c = d>=0?C.up:C.down;
+    s += `<circle cx="${X(i)}" cy="${y(v)}" r="${i<BASE_END?4:5}" fill="#fff" stroke="${C.blue}" stroke-width="2.6" ${i<BASE_END?'opacity="0.75"':''}/>`;
+    s += `<text x="${X(i)}" y="${y(v)-12}" text-anchor="middle" font-size="11.5" font-weight="700" fill="${i<BASE_END?C.ink2:C.ink}">${v.toFixed(1)}</text>`;
+    s += `<text x="${X(i)}" y="${y(v)+21}" text-anchor="middle" font-size="10.5" font-weight="600" fill="${c}">${d>=0?'+':''}${d.toFixed(2)}</text>`;
   });
-  L.forEach((lb,i)=>{s+=`<text x="${x(i)}" y="${H-34+18}" text-anchor="middle" font-size="12" fill="${C.ink2}">${lb}</text>`;});
-  s+=`<line x1="46" y1="${28+ih}" x2="${W-18}" y2="${28+ih}" stroke="#dde3ec" stroke-width="1"/></svg>`;
+  L.forEach((lb,i)=>{ s += `<text x="${X(i)}" y="${H-PB+18}" text-anchor="middle" font-size="12" fill="${C.ink2}">${lb}</text>`; });
+  s += `<line x1="${PL}" y1="${PT+ih}" x2="${W-PR}" y2="${PT+ih}" stroke="#dde3ec" stroke-width="1"/></svg>`;
   el('c2', s);
 })();
 
-// 图3 锁单占比
-const m3 = mean(lockShare);
+// 图3 锁单占比（参考线＝接手后 3-9月均值）
 el('c3', chart({
-  data: lockShare, yMin:9, yMax:11.6, ticks:[9,9.5,10,10.5,11,11.5],
-  fmt:v=>v.toFixed(1)+'%', color:C.blue, labels:L, dotLabels:lockShare.map(v=>v.toFixed(2)+'%'),
-  avgLine: m3, area:true
+  data: lockShare, yMin:8.5, yMax:11.6, ticks:[8.5,9,9.5,10,10.5,11,11.5],
+  fmt:v=>v.toFixed(1)+'%', color:C.blue, labels:L,
+  dotLabels: lockShare.map(v=>v.toFixed(2)+'%'),
+  avgLine: mean(lockShare.slice(BASE_END)), area:true
 }));
 
-// 图4 交付占比
-const m4 = mean(delivShare);
+// 图4 交付占比（参考线＝接手后 3-9月均值）
 el('c4', chart({
-  data: delivShare, yMin:9, yMax:11.6, ticks:[9,9.5,10,10.5,11,11.5],
-  fmt:v=>v.toFixed(1)+'%', color:C.orange, labels:L, dotLabels:delivShare.map(v=>v.toFixed(2)+'%'),
-  avgLine: m4, area:true
+  data: delivShare, yMin:8.5, yMax:11.6, ticks:[8.5,9,9.5,10,10.5,11,11.5],
+  fmt:v=>v.toFixed(1)+'%', color:C.orange, labels:L,
+  dotLabels: delivShare.map(v=>v.toFixed(2)+'%'),
+  avgLine: mean(delivShare.slice(BASE_END)), area:true
 }));
 
-// 表格
+// 明细表
 let rows='';
 M.forEach((m,i)=>{
   const d = lockRate[i]-avgRate[i];
   const cls = d>=0?'pos':'neg';
   const rk = rank[i];
   const rkCls = rk<=3?'top':(rk<=8?'mid':'low');
-  rows += `<tr>
-    <td>${m}月</td>
+  const pre = i<BASE_END ? '<span class="tag">接手前</span>' : '';
+  rows += `<tr class="${i<BASE_END?'base':''}">
+    <td>${m}月${pre}</td>
     <td>${lockTgt[i].toFixed(0)}</td>
     <td>${lock[i]}</td>
     <td><b>${lockRate[i].toFixed(2)}%</b></td>
@@ -344,14 +337,15 @@ M.forEach((m,i)=>{
     <td>${delivRate[i].toFixed(2)}%</td>
   </tr>`;
 });
-const tLock=lock.reduce((a,b)=>a+b,0), tDeliv=deliv.reduce((a,b)=>a+b,0);
-const tHL=hnLock.reduce((a,b)=>a+b,0), tHD=hnDeliv.reduce((a,b)=>a+b,0);
-const tTgt=lockTgt.reduce((a,b)=>a+b,0);
+const sum = a => a.reduce((p,c)=>p+c,0);
+const aLock = sum(lock.slice(BASE_END)), aDeliv = sum(deliv.slice(BASE_END));
+const aHL = sum(hnLock.slice(BASE_END)), aHD = sum(hnDeliv.slice(BASE_END));
+const aTgt = sum(lockTgt.slice(BASE_END));
 rows += `<tr class="total">
-  <td>合计/累计</td><td>${tTgt.toFixed(0)}</td><td>${tLock.toLocaleString()}</td>
-  <td>${(tLock/tTgt*100).toFixed(2)}%</td><td>—</td><td class="pos">+1.43pp</td>
-  <td>—</td><td>${tHL.toLocaleString()}</td><td>${(tLock/tHL*100).toFixed(2)}%</td>
-  <td>${tDeliv.toLocaleString()}</td><td>${tHD.toLocaleString()}</td><td>${(tDeliv/tHD*100).toFixed(2)}%</td><td>—</td>
+  <td>接手后合计（3–9月）</td><td>${aTgt.toFixed(0)}</td><td>${aLock.toLocaleString()}</td>
+  <td>${(aLock/aTgt*100).toFixed(2)}%</td><td>—</td><td class="pos">+1.43pp</td>
+  <td>—</td><td>${aHL.toLocaleString()}</td><td>${(aLock/aHL*100).toFixed(2)}%</td>
+  <td>${aDeliv.toLocaleString()}</td><td>${aHD.toLocaleString()}</td><td>${(aDeliv/aHD*100).toFixed(2)}%</td><td>—</td>
 </tr>`;
 document.getElementById('tbody').innerHTML = rows;
 </script>
