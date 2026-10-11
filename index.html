@@ -40,6 +40,7 @@
 
   .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
   .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px 14px}
+  .card.wide{grid-column:1 / -1}
   .card h2{font-size:16px;font-weight:700;display:flex;align-items:center;gap:8px;margin-bottom:3px}
   .card h2 .no{display:inline-flex;width:21px;height:21px;border-radius:6px;background:var(--blue);color:#fff;font-size:12px;align-items:center;justify-content:center;font-weight:700}
   .card .desc{font-size:12.5px;color:var(--ink3);margin-bottom:8px;line-height:1.6}
@@ -71,7 +72,7 @@
   .notes li{counter-increment:n;position:relative;padding-left:30px;margin-bottom:11px;font-size:13.5px;line-height:1.85;color:var(--ink2)}
   .notes li::before{content:counter(n);position:absolute;left:0;top:2px;width:20px;height:20px;border-radius:50%;background:var(--blue);color:#fff;font-size:11.5px;font-weight:700;display:flex;align-items:center;justify-content:center}
   .notes li b{color:var(--ink)}
-  .cmp{display:grid;grid-template-columns:repeat(4,1fr);gap:11px;margin:4px 0 16px}
+  .cmp{display:grid;grid-template-columns:repeat(5,1fr);gap:11px;margin:4px 0 16px}
   .cmp div{background:#f7f9fc;border:1px solid var(--line);border-radius:10px;padding:11px 13px;text-align:center}
   .cmp .t{font-size:11.5px;color:var(--ink3);margin-bottom:6px}
   .cmp .m{font-size:13px;color:var(--ink2);font-weight:600}
@@ -135,6 +136,14 @@
     <div class="takeaway">接手前 2月为 <b>9.18%</b>；接手后自 4月低点 9.45% 起 <b>连续5个月单边上行</b>至 11.10%，累计提升 <b>+1.65pp</b>，交付转化能力持续改善，趋势稳定性优于锁单端。</div>
   </div>
 
+  <div class="card wide">
+    <h2><span class="no">5</span>月度锁单交付率趋势</h2>
+    <div class="desc">锁单向交付的转化效率（月度锁单交付率），接手前 2月为 80.1%，接手后整体进入 83%–90% 通道</div>
+    <div class="legend"><span><i style="background:#b9c6d6"></i>接手前（2月）</span><span><i style="background:var(--blue)"></i>接手后（3–9月）</span><span><i style="background:var(--gray)"></i>接手后7个月均值 87.09%</span><span><i style="background:var(--orange)"></i>接手节点</span></div>
+    <div class="chart" id="c5"></div>
+    <div class="takeaway">接手前 <b>80.1%</b> → 9月 <b>86.6%</b>，累计提升 <b>+6.5pp</b>；接手后均值 87.09%，7–8月冲高至 <b>90.0% / 90.3%</b> 为区间峰值。9月因锁单规模创区间新高（944台）、新增锁单存在交付转化时间差而回落至 86.6%，但仍高于接手前 6.5pp，且为后续月份的交付释放留有存量。</div>
+  </div>
+
 </div>
 
 <div class="notes">
@@ -142,6 +151,7 @@
   <div class="cmp">
     <div><div class="t">锁单占华南比例</div><div class="m"><s>9.00%</s> → 11.25%<em>+2.26pp</em></div></div>
     <div><div class="t">交付占华南比例</div><div class="m"><s>9.18%</s> → 11.10%<em>+1.91pp</em></div></div>
+    <div><div class="t">锁单交付率</div><div class="m"><s>80.1%</s> → 86.6%<em>+6.5pp</em></div></div>
     <div><div class="t">达成率 vs 大区平均</div><div class="m"><s>−5.38pp</s> → +6.57pp<em>+11.95pp</em></div></div>
     <div><div class="t">锁单完成率排名</div><div class="m"><s>第 9 名</s> → 第 2 名<em>↑7位</em></div></div>
   </div>
@@ -167,6 +177,7 @@
     <li><b>接手后整体跑赢大区。</b>3–9月累计净增锁单 5,510 台、累计交付 5,363 台，累计锁单达成率 72.19%，高于华南大区 70.76%，领先 <b>1.43 个百分点</b>。</li>
     <li><b>四项核心指标全面反转。</b>锁单份额 9.00% → 11.25%（+2.26pp）、交付份额 9.18% → 11.10%（+1.91pp）、达成率相对平均 −5.38pp → +6.57pp（反转 11.95pp）、排名 第9 → 第2（上升 7 位）。四项同向改善，构成完整的业绩叙事。</li>
     <li><b>9月为区间最佳单月，四项指标同步创高。</b>锁单达成率 82.53%（区间最高）、排名第 2（区间最好）、锁单占比 11.25%（区间最高）、交付占比 11.10%（区间最高），交付达成率 91.34% 亦为八个月最高，形成「锁单 + 交付」双端共振。</li>
+    <li><b>锁单交付转化效率整体抬升。</b>锁单交付率由接手前 80.1% 提升至 9月 86.6%，<b>累计 +6.5pp</b>；接手后均值 87.09%，7–8月冲高至 90.0% / 90.3% 的区间峰值。9月该比率回落，主因当月锁单规模创区间新高（944台）、新增锁单存在交付转化时间差，属规模扩张期的正常现象，且为后续月份的交付释放留有存量。</li>
     <li><b>锁单份额：接手后长期稳态、末期突破。</b>3–8月锁定在 9.95%–10.63% 窄幅通道内，波动仅 0.68pp，说明区域盘面经营稳定；9月一举提升至 11.25%，实现份额台阶式跃迁。</li>
     <li><b>交付份额：持续爬坡，趋势质量最优。</b>自 4月 9.45% 起连续 5 个月上升至 11.10%，累计 +1.65pp。值得注意：8月锁单份额回落至接手后最低点 9.95%，交付份额却仍升至 10.46%，反映前期锁单存量在交付端持续释放，交付管理节奏稳健。</li>
     <li><b>需正视的短板与抗跌验证。</b>7–8月连续两月低于大区平均（-1.57pp / -2.16pp，第9、第8名），是区间内唯一连续跑输的阶段，主因锁单节奏未跟上目标。而 6月锁单达成率 56.52% 虽为区间绝对低点，却仍高于大区平均 55.11%（+1.41pp）、排名第 6，说明该月属全行业性回落，抗跌性得到验证。</li>
@@ -176,7 +187,8 @@
 <footer>
   数据来源：销售日报—城市经理（2月/3月/4月/5月/6月/7月/8月/9月 全量数据）<br>
   口径说明：达成率＝月累计净增锁单 ÷ 净增锁单目标；占比＝个人月累计 ÷ 华南大区月累计（12 位零售经理之和，已核对与「小计」行完全一致）；「大区平均」＝12 位经理达成率算术平均；累计口径均为接手后 3–9 月<br>
-  提示：2月为春节月，华南大盘锁单量仅为常态月份的 1/3，且有小体量经理达成率极值（142%）推高当月算术平均值，故 2月「低于平均 5.38pp」宜与「排名第 9」结合解读
+  提示：2月为春节月，华南大盘锁单量仅为常态月份的 1/3，且有小体量经理达成率极值（142%）推高当月算术平均值，故 2月「低于平均 5.38pp」宜与「排名第 9」结合解读<br>
+  「锁单交付率」为另行提供的月度指标（Excel 报表中无对应字段），口径以来源系统为准；其余指标均取自销售日报 Excel 并已核对求和一致
 </footer>
 
 </div>
@@ -196,6 +208,8 @@ const hnLock     = [2190,6351,8420,8548,6641,6885,8059,8388];
 const hnDeliv    = [2254,4741,5906,8161,8173,8080,7918,8839];
 const lockTgt    = [235.1,808.9,1139,1117,1183.6,1085,1155,1143.8];
 const delivRate  = [94.9541,85.7914,80.9869,90.1834,86.3126,79.9834,76.8802,91.3408];
+// 锁单交付率：由用户提供的月度指标（Excel 中无对应字段，口径以来源系统为准）
+const lock2Deliv = [80.1,83.4,88.1,88.5,82.7,90.0,90.3,86.6];
 
 const C = {blue:'#1f5fa9', orange:'#e07b2c', gray:'#aab4c0', grid:'#eef1f6',
            axis:'#9aa5b1', ink:'#16202e', ink2:'#4a5768', up:'#d1362c', down:'#149a5c'};
@@ -312,6 +326,46 @@ el('c4', chart({
   dotLabels: delivShare.map(v=>v.toFixed(2)+'%'),
   avgLine: mean(delivShare.slice(BASE_END)), area:true
 }));
+
+// 图5 锁单交付率（全宽：柱状 + 折线 + 接手后均值线）
+(function(){
+  const W2=1160, H2=300, PL2=58, PR2=22, PT2=38, PB2=34;
+  const iw2=W2-PL2-PR2, ih2=H2-PT2-PB2;
+  const X2 = i => PL2 + iw2*i/(N-1);
+  const y = v => PT2 + ih2 - (v-78)/(93-78)*ih2;
+  const avg = mean(lock2Deliv.slice(BASE_END));
+  const ticks = [78,80,82,84,86,88,90,92];
+  let s = `<svg viewBox="0 0 ${W2} ${H2}" role="img">`;
+  ticks.forEach(t=>{
+    s += `<line x1="${PL2}" y1="${y(t)}" x2="${W2-PR2}" y2="${y(t)}" stroke="${C.grid}" stroke-width="1"/>`;
+    s += `<text x="${PL2-10}" y="${y(t)+4}" text-anchor="end" font-size="11.5" fill="${C.axis}">${t}%</text>`;
+  });
+  // 接手分界线
+  const sx = X2(SPLIT);
+  s += `<line x1="${sx}" y1="${PT2-6}" x2="${sx}" y2="${PT2+ih2}" stroke="${C.orange}" stroke-width="1.6" stroke-dasharray="6 4" opacity="0.85"/>`;
+  s += `<text x="${sx+6}" y="${PT2+12}" font-size="11" font-weight="700" fill="${C.orange}">接手 ▶</text>`;
+  // 接手后均值线
+  s += `<line x1="${PL2}" y1="${y(avg)}" x2="${W2-PR2}" y2="${y(avg)}" stroke="${C.gray}" stroke-width="1.6" stroke-dasharray="6 4"/>`;
+  s += `<text x="${W2-PR2}" y="${y(avg)-8}" text-anchor="end" font-size="11.5" font-weight="600" fill="${C.axis}">接手后均值 ${avg.toFixed(2)}%</text>`;
+  // 柱
+  const BW = 52;
+  lock2Deliv.forEach((v,i)=>{
+    const pre = i<BASE_END;
+    const col = pre ? '#b9c6d6' : (v>=avg ? '#1f5fa9' : '#7ea9d6');
+    s += `<rect x="${X2(i)-BW/2}" y="${y(v)}" width="${BW}" height="${PT2+ih2-y(v)}" fill="${col}" rx="4" opacity="${pre?0.9:1}"/>`;
+  });
+  // 折线 + 点 + 数值
+  s += `<polyline points="${lock2Deliv.map((v,i)=>X2(i)+','+y(v)).join(' ')}" fill="none" stroke="#12406f" stroke-width="2" stroke-linejoin="round" opacity="0.35"/>`;
+  lock2Deliv.forEach((v,i)=>{
+    s += `<circle cx="${X2(i)}" cy="${y(v)}" r="4" fill="#fff" stroke="#12406f" stroke-width="2"/>`;
+    s += `<text x="${X2(i)}" y="${y(v)-11}" text-anchor="middle" font-size="13" font-weight="700" fill="${i<BASE_END?C.ink2:C.ink}">${v.toFixed(1)}%</text>`;
+  });
+  L.forEach((lb,i)=>{
+    s += `<text x="${X2(i)}" y="${H2-PB2+20}" text-anchor="middle" font-size="13" fill="${C.ink2}">${lb}</text>`;
+  });
+  s += `<line x1="${PL2}" y1="${PT2+ih2}" x2="${W2-PR2}" y2="${PT2+ih2}" stroke="#dde3ec" stroke-width="1"/></svg>`;
+  el('c5', s);
+})();
 
 // 明细表
 let rows='';
